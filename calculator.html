@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML5 Calculator</title>
+<style>
+body {
+background-color: teal; }
+h1 {margin-left: 740px;color: white; font-size: 40px}
+#app {margin-left: 700px;margin-top: 200px;height: 615px;width: 400px;border: solid 1px white;}
+#display {
+padding: 0;margin: 0;border: solid 1px blue;height: 100px;width: 395px;background-color: #239C7B;
+color:white;font-size: 60px;}
+#buttons-area {
+margin-top: 10px;}
+.buttons {
+padding: 0;margin: 0;width: 98px;height: 100px;background-color: white;font-size: 60px;}
+</style>
+</head>
+<body>
+    <h1>HTML5 Calculator</h1>
+<div id="app">
+    
+        <form id="calculator" name="calculator">
+            <input type="text" name="display" id="display">
+        </form>
+
+    <div id="buttons-area">
+       <input type="button" value="C" class="buttons" onclick="calculator.display.value=''"><input type="button" value="%" class="buttons" onclick="calculator.display.value+='%'"><input type="button" value="&#8730;" class="buttons" onclick="calculator.display.value+='&#8730;'"> <input type="button" value="?" class="buttons" onclick="">
+       <input type="button" value="7" class="buttons" onclick="calculator.display.value+='7'"><input type="button" value="8" class="buttons" onclick="calculator.display.value+='8'"><input type="button" value="9" class="buttons" onclick="calculator.display.value+='9'"> <input type="button" value="*" class="buttons" onclick="calculator.display.value+='*'">
+       <input type="button" value="4" class="buttons" onclick="calculator.display.value+='4'"><input type="button" value="5" class="buttons" onclick="calculator.display.value+='5'"><input type="button" value="6" class="buttons" onclick="calculator.display.value+='5'"> <input type="button" value="/" class="buttons" onclick="calculator.display.value+='/'">
+       <input type="button" value="1" class="buttons" onclick="calculator.display.value+='1'"><input type="button" value="2" class="buttons" onclick="calculator.display.value+='2'"><input type="button" value="3" class="buttons" onclick="calculator.display.value+='3'"> <input type="button" value="-" class="buttons" onclick="calculator.display.value+='-'">
+       <input type="button" value="0" class="buttons" onclick="calculator.display.value+='0'"><input type="button" value="." class="buttons" onclick="calculator.display.value+='.'"><input type="button" value="=" class="buttons" onclick="calculator.display.value+='='"> <input type="button" value="+" class="buttons" onclick="calculator.display.value+='+'">
+    </div>
+
+</div>
+<script>
+</script>
+</body>
+</html>
