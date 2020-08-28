@@ -1,0 +1,1 @@
+Mini-project Calculator written in HTML5, CSS3 and vanilla JavaScript.
