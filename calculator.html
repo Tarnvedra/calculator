@@ -1,39 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>HTML5 Calculator</title>
+<title>Calculator</title>
 <style>
 body {
-background-color: teal; }
-h1 {margin-left: 740px;color: white; font-size: 40px}
-#app {margin-left: 700px;margin-top: 200px;height: 615px;width: 400px;border: solid 1px white;}
+background-color: whitesmoke; }
+h1 {margin-left: 790px;color: black; font-size: 40px}
+#app {margin-left: 700px;margin-top: 200px;height: 615px;width: 400px;border: solid 4px black;}
 #display {
-padding: 0;margin: 0;border: solid 1px blue;height: 100px;width: 395px;background-color: #239C7B;
-color:white;font-size: 60px;}
+padding: 0;margin: 0;border: solid 1px blue;height: 100px;width: 395px;background-color: lightgrey;
+color:black;font-size: 60px;}
 #buttons-area {
 margin-top: 10px;}
 .buttons {
-padding: 0;margin: 0;width: 98px;height: 100px;background-color: white;font-size: 60px;}
+padding: 0;margin: 0;width: 99px;height: 100px;background-color: white;font-size: 60px;}
+.special-buttons {
+padding: 0;margin: 0;width: 99px;height: 100px;background-color: lightgrey;color:blue;font-size: 60px;}
+#equals {
+padding: 0;margin: 0;width: 99px;height: 100px;background-color: skyblue;color:black;font-size: 60px;}
 </style>
 </head>
 <body>
-    <h1>HTML5 Calculator</h1>
+    <h1>Calculator</h1>
 <div id="app">
     
         <form id="calculator" name="calculator">
-            <input type="text" name="display" id="display">
+            <input type="text" name="display" id="display" maxlength="10">
         </form>
 
     <div id="buttons-area">
-       <input type="button" value="C" class="buttons" onclick="calculator.display.value=''"><input type="button" value="%" class="buttons" onclick="calculator.display.value+='%'"><input type="button" value="&#8730;" class="buttons" onclick="calculator.display.value+='&#8730;'"> <input type="button" value="?" class="buttons" onclick="">
-       <input type="button" value="7" class="buttons" onclick="calculator.display.value+='7'"><input type="button" value="8" class="buttons" onclick="calculator.display.value+='8'"><input type="button" value="9" class="buttons" onclick="calculator.display.value+='9'"> <input type="button" value="*" class="buttons" onclick="calculator.display.value+='*'">
-       <input type="button" value="4" class="buttons" onclick="calculator.display.value+='4'"><input type="button" value="5" class="buttons" onclick="calculator.display.value+='5'"><input type="button" value="6" class="buttons" onclick="calculator.display.value+='5'"> <input type="button" value="/" class="buttons" onclick="calculator.display.value+='/'">
-       <input type="button" value="1" class="buttons" onclick="calculator.display.value+='1'"><input type="button" value="2" class="buttons" onclick="calculator.display.value+='2'"><input type="button" value="3" class="buttons" onclick="calculator.display.value+='3'"> <input type="button" value="-" class="buttons" onclick="calculator.display.value+='-'">
-       <input type="button" value="0" class="buttons" onclick="calculator.display.value+='0'"><input type="button" value="." class="buttons" onclick="calculator.display.value+='.'"><input type="button" value="=" class="buttons" onclick="calculator.display.value+='='"> <input type="button" value="+" class="buttons" onclick="calculator.display.value+='+'">
+       <input type="button" value="C" class="special-buttons" onclick="calculator.display.value=''"><input type="button" value="%" class="special-buttons" onclick="percent()"><input type="button" value="&#8730;" class="special-buttons" onclick="squareRoot()"> <input type="button" value="?" class="special-buttons" onclick="">
+       <input type="button" value="7" class="buttons" onclick="calculator.display.value+='7'"><input type="button" value="8" class="buttons" onclick="calculator.display.value+='8'"><input type="button" value="9" class="buttons" onclick="calculator.display.value+='9'"> <input type="button" value="*" class="special-buttons" onclick="calculator.display.value+='*'">
+       <input type="button" value="4" class="buttons" onclick="calculator.display.value+='4'"><input type="button" value="5" class="buttons" onclick="calculator.display.value+='5'"><input type="button" value="6" class="buttons" onclick="calculator.display.value+='5'"> <input type="button" value="/" class="special-buttons" onclick="calculator.display.value+='/'">
+       <input type="button" value="1" class="buttons" onclick="calculator.display.value+='1'"><input type="button" value="2" class="buttons" onclick="calculator.display.value+='2'"><input type="button" value="3" class="buttons" onclick="calculator.display.value+='3'"> <input type="button" value="-" class="special-buttons" onclick="calculator.display.value+='-'">
+       <input type="button" value="0" class="buttons" onclick="calculator.display.value+='0'"><input type="button" value="." class="buttons" onclick="calculator.display.value+='.'"><input type="button" value="=" id="equals" onclick="evalulate()"> <input type="button" value="+" class="special-buttons" onclick="calculator.display.value+='+'">
     </div>
 
 </div>
 <script>
+
+    function evalulate() {
+        let total = eval(calculator.display.value);
+        calculator.display.value = total;
+    }
+
+    function squareRoot() {
+    let square = Math.sqrt(calculator.display.value);
+    wholeNumber = (square - Math.floor(square)) !== 0;
+    if (wholeNumber) {
+    let result= square.toFixed(6);
+    calculator.display.value = result;
+    }
+    else {
+        calculator.display.value = square;
+     }
+    }
+
+    function percent() {
+     var addition = new RegExp("+");
+     var subtraction = new RegExp("-");
+     var multiplication = new RegExp("*");
+     var divison = new RegExp("/");
+
+     let percentage = eval(calculator.display.value)/100;
+     console.log(percentage);   
+    }
 </script>
 </body>
 </html>
