@@ -13,11 +13,11 @@ color:black;font-size: 60px;}
 #buttons-area {
 margin-top: 10px;}
 .buttons {
-padding: 0;margin: 0;width: 99px;height: 100px;background-color: white;font-size: 60px;}
+padding: 0;margin: 0;width: 99px;height: 99px;background-color: white;font-size: 60px;}
 .special-buttons {
-padding: 0;margin: 0;width: 99px;height: 100px;background-color: lightgrey;color:blue;font-size: 60px;}
+padding: 0;margin: 0;width: 99px;height: 99px;background-color: lightgrey;color:blue;font-size: 60px;}
 #equals {
-padding: 0;margin: 0;width: 99px;height: 100px;background-color: skyblue;color:black;font-size: 60px;}
+padding: 0;margin: 0;width: 99px;height: 99px;background-color: skyblue;color:black;font-size: 60px;}
 </style>
 </head>
 <body>
@@ -25,45 +25,69 @@ padding: 0;margin: 0;width: 99px;height: 100px;background-color: skyblue;color:b
 <div id="app">
     
         <form id="calculator" name="calculator">
-            <input type="text" name="display" id="display" maxlength="10">
+            <input type="text" name="display" pattern="[0-9]" id="display" maxlength="10">
         </form>
 
     <div id="buttons-area">
-       <input type="button" value="C" class="special-buttons" onclick="calculator.display.value=''"><input type="button" value="%" class="special-buttons" onclick="percent()"><input type="button" value="&#8730;" class="special-buttons" onclick="squareRoot()"> <input type="button" value="?" class="special-buttons" onclick="">
-       <input type="button" value="7" class="buttons" onclick="calculator.display.value+='7'"><input type="button" value="8" class="buttons" onclick="calculator.display.value+='8'"><input type="button" value="9" class="buttons" onclick="calculator.display.value+='9'"> <input type="button" value="*" class="special-buttons" onclick="calculator.display.value+='*'">
-       <input type="button" value="4" class="buttons" onclick="calculator.display.value+='4'"><input type="button" value="5" class="buttons" onclick="calculator.display.value+='5'"><input type="button" value="6" class="buttons" onclick="calculator.display.value+='5'"> <input type="button" value="/" class="special-buttons" onclick="calculator.display.value+='/'">
-       <input type="button" value="1" class="buttons" onclick="calculator.display.value+='1'"><input type="button" value="2" class="buttons" onclick="calculator.display.value+='2'"><input type="button" value="3" class="buttons" onclick="calculator.display.value+='3'"> <input type="button" value="-" class="special-buttons" onclick="calculator.display.value+='-'">
-       <input type="button" value="0" class="buttons" onclick="calculator.display.value+='0'"><input type="button" value="." class="buttons" onclick="calculator.display.value+='.'"><input type="button" value="=" id="equals" onclick="evalulate()"> <input type="button" value="+" class="special-buttons" onclick="calculator.display.value+='+'">
+       <input type="button" value="C" class="special-buttons" onclick="calculator.display.value=''"><input type="button" value="CE" class="special-buttons" onclick="calculator.display.value=''"><input type="button" value="&#8730;" class="special-buttons" onclick="squareRoot()"><input type="button" value="*" class="special-buttons" onclick="calculator.display.value+='*'">
+       <input type="button" value="7" class="buttons" onclick="calculator.display.value+='7'"><input type="button" value="8" class="buttons" onclick="calculator.display.value+='8'"><input type="button" value="9" class="buttons" onclick="calculator.display.value+='9'"> <input type="button" value="/" class="special-buttons" onclick="calculator.display.value+='/'">
+       <input type="button" value="4" class="buttons" onclick="calculator.display.value+='4'"><input type="button" value="5" class="buttons" onclick="calculator.display.value+='5'"><input type="button" value="6" class="buttons" onclick="calculator.display.value+='6'"> <input type="button" value="-" class="special-buttons" onclick="calculator.display.value+='-'">
+       <input type="button" value="1" class="buttons" onclick="calculator.display.value+='1'"><input type="button" value="2" class="buttons" onclick="calculator.display.value+='2'"><input type="button" value="3" class="buttons" onclick="calculator.display.value+='3'"> <input type="button" value="+" class="special-buttons" onclick="calculator.display.value+='+'">
+       <input type="button" value="0" class="buttons" onclick="calculator.display.value+='0'"><input type="button" value="." class="buttons" onclick="calculator.display.value+='.'"><input type="button" value="%" class="buttons" onclick="percent()"><input type="button" value="=" id="equals" onclick="evalulate()"> 
     </div>
 
 </div>
 <script>
 
     function evalulate() {
+        const arithmetic = /(?:(?:^|[-+_*/])(?:\s*-?\d+(\.\d+)?(?:[eE][+-]?\d+)?\s*))+$/;
+        var testExpression = arithmetic.test(calculator.display.value);
+        console.log(testExpression); 
+        var contains_dot = calculator.display.value.indexOf(".");
+        console.log(contains_dot); 
+        if (testExpression) {
         let total = eval(calculator.display.value);
         calculator.display.value = total;
+        }
+        else {
+        calculator.display.value = "E";    
+        }
     }
 
     function squareRoot() {
-    let square = Math.sqrt(calculator.display.value);
-    wholeNumber = (square - Math.floor(square)) !== 0;
-    if (wholeNumber) {
-    let result= square.toFixed(6);
-    calculator.display.value = result;
+    
+        const numeric = /[0-9]+$/;
+        var testNumeric = numeric.test(calculator.display.value);
+        console.log(testNumeric);
+        if (testNumeric) {
+        let square = Math.sqrt(calculator.display.value);
+        wholeNumber = (square - Math.floor(square)) !== 0;
+            if (wholeNumber) {
+            let result= square.toFixed(8);
+            calculator.display.value = result;
+            }
+            else {
+                calculator.display.value = square;
+                }
+        }
+        else {
+            calculator.display.value = "E";   
+        }
     }
-    else {
-        calculator.display.value = square;
+   
+     function percent() {
+     const arithmetic = /(?:(?:^|[-+_*/])(?:\s*-?\d+(\.\d+)?(?:[eE][+-]?\d+)?\s*))+$/;
+     var testExpression = arithmetic.test(calculator.display.value); 
+     if (testExpression) {
+        alert('Arithmetic Operator Found');
+        // adding in split string function at artithmetic operator
+
      }
-    }
-
-    function percent() {
-     var addition = new RegExp("+");
-     var subtraction = new RegExp("-");
-     var multiplication = new RegExp("*");
-     var divison = new RegExp("/");
-
-     let percentage = eval(calculator.display.value)/100;
-     console.log(percentage);   
+     else {
+        alert('arithmetic operator not found');
+     }
+    
+    
     }
 </script>
 </body>
