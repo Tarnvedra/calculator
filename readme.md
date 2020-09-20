@@ -1,1 +1,1 @@
-Mini-project (SPA) (No Frameworks) Calculator written in HTML5, CSS3 and vanilla JavaScript.
+Mini-project (SPA) calculator app written in HTML5, CSS3 and JavaScript.
