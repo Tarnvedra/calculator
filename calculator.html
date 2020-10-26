@@ -1,43 +1,162 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Calculator</title>
-<style>
-body {
-background-color: whitesmoke; }
-h1 {margin-left: 790px;color: black; font-size: 40px}
-#app {margin-left: 700px;margin-top: 200px;height: 615px;width: 400px;border: solid 4px black;}
-#display {
-padding: 0;margin: 0;border: solid 1px blue;height: 100px;width: 395px;background-color: lightgrey;
-color:black;font-size: 60px;}
-#buttons-area {
-margin-top: 10px;}
-.buttons {
-padding: 0;margin: 0;width: 99px;height: 99px;background-color: white;font-size: 60px;}
-.special-buttons {
-padding: 0;margin: 0;width: 99px;height: 99px;background-color: lightgrey;color:blue;font-size: 60px;}
-#equals {
-padding: 0;margin: 0;width: 99px;height: 99px;background-color: skyblue;color:black;font-size: 60px;}
-</style>
-</head>
-<body>
-    <h1>Calculator</h1>
-<div id="app">
-    
+  <head>
+    <title>Calculator</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap"
+      rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/calc.css">
+  </head>
+  <body>
+    <header class="text-center">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed top">
+
+        <a class="navbar-brand" href="#"><img
+            src="assets/images/projects/logo.png" id="logo" alt="logo brand"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#navbarCollapse" aria-controls="navbarCollapse"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+           </ul>
+        </div>
+      </nav>
+
+
+      <h1 class="pt-3 pr-5 text-center">Calculator</h1>
+
+      <div id="app">
+
         <form id="calculator" name="calculator">
-            <input type="text" name="display" pattern="[0-9]" id="display" maxlength="10">
+          <input type="text" name="display" pattern="[0-9]" id="display"
+            maxlength="10">
         </form>
 
-    <div id="buttons-area">
-       <input type="button" value="C" class="special-buttons" onclick="calculator.display.value=''"><input type="button" value="CE" class="special-buttons" onclick="calculator.display.value=''"><input type="button" value="&#8730;" class="special-buttons" onclick="squareRoot()"><input type="button" value="*" class="special-buttons" onclick="calculator.display.value+='*'">
-       <input type="button" value="7" class="buttons" onclick="calculator.display.value+='7'"><input type="button" value="8" class="buttons" onclick="calculator.display.value+='8'"><input type="button" value="9" class="buttons" onclick="calculator.display.value+='9'"> <input type="button" value="/" class="special-buttons" onclick="calculator.display.value+='/'">
-       <input type="button" value="4" class="buttons" onclick="calculator.display.value+='4'"><input type="button" value="5" class="buttons" onclick="calculator.display.value+='5'"><input type="button" value="6" class="buttons" onclick="calculator.display.value+='6'"> <input type="button" value="-" class="special-buttons" onclick="calculator.display.value+='-'">
-       <input type="button" value="1" class="buttons" onclick="calculator.display.value+='1'"><input type="button" value="2" class="buttons" onclick="calculator.display.value+='2'"><input type="button" value="3" class="buttons" onclick="calculator.display.value+='3'"> <input type="button" value="+" class="special-buttons" onclick="calculator.display.value+='+'">
-       <input type="button" value="0" class="buttons" onclick="calculator.display.value+='0'"><input type="button" value="." class="buttons" onclick="calculator.display.value+='.'"><input type="button" value="%" class="buttons" onclick="percent()"><input type="button" value="=" id="equals" onclick="evalulate()"> 
-    </div>
+        <div id="buttons-area">
+          <div class="row">
+            <input type="button" value="C" class="special-buttons"
+              onclick="calculator.display.value=''"><input type="button"
+              value="CE" class="special-buttons"
+              onclick="calculator.display.value=''"><input type="button"
+              value="&#8730;" class="special-buttons" onclick="squareRoot()"><input
+              type="button" value="*" class="special-buttons"
+              onclick="calculator.display.value+='*'">
+          </div>
+          <div class="row">
+            <input type="button" value="7" class="buttons"
+              onclick="calculator.display.value+='7'"><input type="button"
+              value="8" class="buttons" onclick="calculator.display.value+='8'"><input
+              type="button" value="9" class="buttons"
+              onclick="calculator.display.value+='9'"> <input type="button"
+              value="/" class="special-buttons"
+              onclick="calculator.display.value+='/'">
+          </div>
+          <div class="row">
+            <input type="button" value="4" class="buttons"
+              onclick="calculator.display.value+='4'"><input type="button"
+              value="5" class="buttons" onclick="calculator.display.value+='5'"><input
+              type="button" value="6" class="buttons"
+              onclick="calculator.display.value+='6'"> <input type="button"
+              value="-" class="special-buttons"
+              onclick="calculator.display.value+='-'">
+          </div>
+          <div class="row">
+            <input type="button" value="1" class="buttons"
+              onclick="calculator.display.value+='1'"><input type="button"
+              value="2" class="buttons" onclick="calculator.display.value+='2'"><input
+              type="button" value="3" class="buttons"
+              onclick="calculator.display.value+='3'"> <input type="button"
+              value="+" class="special-buttons"
+              onclick="calculator.display.value+='+'">
+          </div>
+          <div class="row">
+            <input type="button" value="0" class="buttons"
+              onclick="calculator.display.value+='0'"><input type="button"
+              value="." class="buttons" onclick="calculator.display.value+='.'"><input
+              type="button" value="%" class="buttons" onclick="percent()"><input
+              type="button" value="="id="equals" onclick="evalulate()">
+          </div>
+        </div>
 
-</div>
-<script>
+      </div>
+ 
+      <div class="jumbotron mt-5">
+        <h2 class="text-center"><i>About the App</i></h2>
+
+        <div class="row">
+          <div class="text-center">
+            <p>This is a mini project written using HTML5,CSS3 and JavaScript
+              and Bootstrap 4.
+              The app is the classic calculator app providing most of the
+              functions of the standard calculator
+              that you would find in an OS such as Windows. I have just the
+              percentage function left to finish</p>
+          </div>
+
+        </div>
+
+
+      </div>
+  
+    <footer class="jumbotron jumbotron-dark bg-dark">
+      <div class="row text-center">
+
+        <div class="col-md-6">
+          <p class="float-right"><a class="footer-text" href="#">Back to top</a></p>
+          <p class="footer-text">&copy; Paul Colley 2020 &middot; <a
+              class="footer-text" href="#">Privacy</a> &middot; <a
+              class="footer-text" href="#">Terms</a> </p>
+        </div>
+        <div class="col-md-6">
+          <a href="https://github.com/Tarnvedra" class="btn btn-large">
+            <i class="fab fa-github icon-large"></i></a>
+          <a href="https://www.linkedin.com/in/paul-colley-3080aa116/"
+            class="btn btn-large">
+            <i class="fab fa-linkedin icon-large"></i></a>
+          <a href="https://www.facebook.com/paul.colley.track79" class="btn
+            btn-large">
+            <i class="fab fa-facebook-square icon-large"></i></a>
+          <a href="https://www.instagram.com/tarnvedra/?hl=en" class="btn
+            btn-large">
+            <i class="fab fa-instagram-square icon-large"></i></a>
+          <a href="https://twitter.com/_Tarnvedra_" class="btn btn-large">
+            <i class="fab fa-twitter-square icon-large"></i></a>
+
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5d573eda56.js"
+      crossorigin="anonymous"></script>
+
+    <script>
 
     function evalulate() {
         const arithmetic = /(?:(?:^|[-+_*/])(?:\s*-?\d+(\.\d+)?(?:[eE][+-]?\d+)?\s*))+$/;
@@ -79,16 +198,16 @@ padding: 0;margin: 0;width: 99px;height: 99px;background-color: skyblue;color:bl
      const arithmetic = /(?:(?:^|[-+_*/])(?:\s*-?\d+(\.\d+)?(?:[eE][+-]?\d+)?\s*))+$/;
      var testExpression = arithmetic.test(calculator.display.value); 
      if (testExpression) {
-        alert('Arithmetic Operator Found');
+        //alert('Arithmetic Operator Found');
         // adding in split string function at artithmetic operator
 
      }
      else {
-        alert('arithmetic operator not found');
+        //alert('arithmetic operator not found');
      }
     
     
     }
 </script>
-</body>
+  </body>
 </html>

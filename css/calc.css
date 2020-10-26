@@ -1,0 +1,231 @@
+body {
+    margin: 0px;
+    font-family: 'Roboto Slab', serif;
+    background-image: linear-gradient(120deg, #d86c70, #ddb0a0);
+}
+
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: lightgrey;
+    color: #FFF;
+    padding: 1% 0;
+    font-size: 1.2em;
+    border: 0;
+}
+
+.navbar-brand {
+    float: left;
+    min-height: 55px;
+    padding: 0 15px 5px;
+}
+
+#icon {
+    max-width: 100px;
+    margin: 1% auto;
+}
+
+.container {
+    margin: 4% auto;
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
+.jumbotron {
+    margin: 0;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.navbar-brand img {
+    width: 50px;
+    height: 50px;
+}
+
+h3 {
+    color: white;
+}
+
+#about {
+    font-size-adjust: 20px;
+}
+
+p {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+a #logo {
+    background-color: grey;
+}
+
+.footer-text {
+    color: white;
+}
+
+footer .btn {
+    border: none;
+    font-size: 18px;
+    color: #FFF;
+    padding: 12px 22px;
+    background: #1E90FF;
+}
+
+@media screen and (min-width: 200px) and (max-width: 767px) {
+    #app {
+        margin-left: 60px;
+        margin-top: 75px;
+        height: 220px;
+        width: 140px;
+        border: solid 4px black;
+    }
+    #display {
+        padding: 0;
+        margin: 0;
+        border: solid 1px black;
+        height: 40px;
+        width: 138px;
+        background-color: black;
+        color: white;
+        font-size: 15px;
+    }
+    #buttons-area {
+        margin-top: 1px;
+        padding-left: 12px;
+    }
+    .buttons {
+        padding: 0;
+        margin: 0;
+        width: 35px;
+        height: 35px;
+        background-color: white;
+        font-size: 15px;
+    }
+    .special-buttons {
+        padding: 0;
+        margin: 0;
+        width: 35px;
+        height: 35px;
+        background-color: lightgrey;
+        color: blue;
+        font-size: 15px;
+    }
+    #equals {
+        padding: 0;
+        margin: 0;
+        width: 35px;
+        height: 35px;
+        background-color: skyblue;
+        color: black;
+        font-size: 15px;
+    }
+}
+
+
+@media screen and (min-width: 800px) and (max-width: 1280px){
+    #app {
+        margin-left: 200px;
+        margin-top: 75px;
+        height: 608px;
+        width: 400px;
+        border: solid 4px black;
+    }
+    #display {
+        padding: 0;
+        margin: 0;
+        border: solid 1px black;
+        height: 105px;
+        width: 395px;
+        background-color: black;
+        color: white;
+        font-size: 60px;
+    }
+    #buttons-area {
+        margin-top: 1px;
+        padding-left: 12px;
+    }
+    .buttons {
+        padding: 0;
+        margin: 0;
+        width: 99px;
+        height: 99px;
+        background-color: white;
+        font-size: 60px;
+    }
+    .special-buttons {
+        padding: 0;
+        margin: 0;
+        width: 99px;
+        height: 99px;
+        background-color: lightgrey;
+        color: blue;
+        font-size: 60px;
+    }
+    #equals {
+        padding: 0;
+        margin: 0;
+        width: 99px;
+        height: 99px;
+        background-color: skyblue;
+        color: black;
+        font-size: 60px;
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    #app {
+        margin-left: 600px;
+        margin-top: 75px;
+        height: 608px;
+        width: 400px;
+        border: solid 4px black;
+    }
+    #display {
+        padding: 0;
+        margin: 0;
+        border: solid 1px black;
+        height: 105px;
+        width: 395px;
+        background-color: black;
+        color: white;
+        font-size: 60px;
+    }
+    #buttons-area {
+        margin-top: 1px;
+        padding-left: 12px;
+    }
+    .buttons {
+        padding: 0;
+        margin: 0;
+        width: 99px;
+        height: 99px;
+        background-color: white;
+        font-size: 60px;
+    }
+    .special-buttons {
+        padding: 0;
+        margin: 0;
+        width: 99px;
+        height: 99px;
+        background-color: lightgrey;
+        color: blue;
+        font-size: 60px;
+    }
+    #equals {
+        padding: 0;
+        margin: 0;
+        width: 99px;
+        height: 99px;
+        background-color: skyblue;
+        color: black;
+        font-size: 60px;
+    }
+}
